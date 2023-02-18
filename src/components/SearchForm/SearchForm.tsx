@@ -11,10 +11,11 @@ interface SearchFormProps {
 }
 
 const SearchForm = ({ setKeyword }: SearchFormProps) => {
-    const { register, handleSubmit} = useForm<SearchFormValues>();
+    
     const updateKeyword = (data: SearchFormValues) => {
         setKeyword(data.keyword);
     }
+    const { register, handleSubmit} = useForm<SearchFormValues>();
     return (
         <form onSubmit={handleSubmit (updateKeyword)}
         style={{ display: "flex", flexDirection: "column"}}>
