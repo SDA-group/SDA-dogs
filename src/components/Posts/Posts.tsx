@@ -9,7 +9,7 @@ const Posts = ( {post} : PostsProps) => {
   return (
     <ListItem>
         <Card variant="outlined" sx={{ mb: "10px" }}>
-            <img src={post.url} 
+            <img src={post.image.url} 
             alt={post.name} 
             style={{ width: "100%" }}/>
 
