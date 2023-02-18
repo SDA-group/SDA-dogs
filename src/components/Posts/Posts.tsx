@@ -20,10 +20,10 @@ const Posts = ( {post} : PostsProps) => {
         <Card onClick = {toggleModal} className = "btn-modal" variant="outlined" sx={{ mb: "10px" }}>
             <img src={post.image.url} 
             alt={post.name} 
-            style={{  width: "600px" }}/>
-            <ListItemText sx={{ color: "black", mx: "5%" }}>
-            {post.name}
-          </ListItemText>
+            style={{ width: "100%" }}/>
+            <ListItemText sx={{ color:'black', mx: '5%'}}>
+              {post.name}
+            </ListItemText>
 
         </Card>
     </ListItem>
