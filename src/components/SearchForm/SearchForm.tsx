@@ -17,7 +17,8 @@ const SearchForm = ({ setKeyword }: SearchFormProps) => {
     }
     const { register, handleSubmit} = useForm<SearchFormValues>();
     return (
-        <form onSubmit={handleSubmit (updateKeyword)}
+        <form 
+        onSubmit={handleSubmit (updateKeyword)}
         style={{ display: "flex", flexDirection: "column"}}>
             <TextField 
             placeholder="name"
