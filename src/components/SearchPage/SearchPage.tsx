@@ -7,13 +7,7 @@ import { PostsObj } from "../DataAPI/DataAPI";
 
 const SearchPage = () => {
     const [keyword, setKeyword] = useState("");
-    const [ posts, setPosts] = useState<PostsObj[]>([{name:``, url: ``, image: {
-        id: ``,
-        width: 0,
-        height: 0,
-        url: ``,
-    
-    }}]);
+    const [ posts, setPosts] = useState<PostsObj[]>([]);
     
 
     useEffect(() => {
