@@ -12,9 +12,7 @@ const Posts = ( {post} : PostsProps) => {
             <img src={post.image.url} 
             alt={post.name} 
             style={{ width: "100%" }}/>
-            <ListItemText sx={{ color: "black", mx: "5%" }}>
-            {post.name}
-            </ListItemText>
+
         </Card>
     </ListItem>
     
