@@ -9,10 +9,11 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: alpha(theme.palette.common.white, 0.5),
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
@@ -50,22 +51,22 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-const Navbar = ( ) => {
+const Navbar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
+             size="large"
+             edge="start"
+             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
+            variant="h3"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
@@ -81,11 +82,11 @@ const Navbar = ( ) => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          
+
         </Toolbar>
       </AppBar>
     </Box>
-   );
-  }
-  
+  );
+}
+
 export default Navbar
