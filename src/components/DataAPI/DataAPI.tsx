@@ -3,11 +3,20 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {APIkey} from '../../helpers/APIkey';
 import Posts from '../Posts/Posts'
+import Pagination from '../Pagination/Pagination';
+import ModalWindow from '../ModalWindow/ModalWindow';
 
+export interface CurrentPageObj {
+    currentPage: number;
+    setCurrentPage: (value: number) => void;
+  }
  export interface PostsObj {
     name: string;
    url: string;
    image: imgObj;
+   origin: string;
+   life_span: string;
+   temperament: string;
 }
 interface imgObj {
     id: string;
@@ -16,8 +25,17 @@ interface imgObj {
     url: string;
 
 }
+export interface PaginationObj {
+    postsPerPage: number;
+    totalPosts: number;
+    previousLabel: string;
+    nextLabel: string
+  }
 const DataAPI = () => {
 const [posts, setPosts] = useState< PostsObj[] | []>([])
+const [currentPage, setCurrentPage] = useState(1);
+const [postsPerPage, setPostsPerPage] = useState(100);
+
 useEffect(() => {
 
     axios.get(`https://api.thedogapi.com/v1/breeds/`, {headers:{
@@ -28,6 +46,10 @@ useEffect(() => {
 
     })
 }, []);
+const lastPostIndex = currentPage * postsPerPage;
+const firstPostIndex = lastPostIndex - postsPerPage;
+const currentPosts = posts.slice(firstPostIndex, lastPostIndex)
+
 
   return (
     <>
@@ -35,8 +57,16 @@ useEffect(() => {
     posts.map((el, i) => {
       return <Posts post = {el} key={i} />;
     })}
-
+<Pagination 
+    totalPosts={posts.length} 
+    postsPerPage = {postsPerPage}
+    setCurrentPage = {setCurrentPage}
+    currentPage = {currentPage}
+    ></Pagination>
+    
+   
     </>
+    
   )
 }
 
