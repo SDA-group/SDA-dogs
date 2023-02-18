@@ -8,7 +8,9 @@ import NavBar from './components/NavBar/NavBar';
 function App() {
   return (
     <div className="App">
-      <DataAPI></DataAPI>
+      {/* <DataAPI></DataAPI> */}
+
+    <SearchPage></SearchPage>
     </div>
   );
 }
