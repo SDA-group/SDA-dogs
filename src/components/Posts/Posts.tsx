@@ -11,7 +11,10 @@ const Posts = ( {post} : PostsProps) => {
         <Card variant="outlined" sx={{ mb: "10px" }}>
             <img src={post.image.url} 
             alt={post.name} 
-            style={{ width: "100%" }}/>
+            style={{  width: "600px" }}/>
+            <ListItemText sx={{ color: "black", mx: "5%" }}>
+            {post.name}
+          </ListItemText>
 
         </Card>
     </ListItem>
