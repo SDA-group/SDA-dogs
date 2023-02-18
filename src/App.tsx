@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       {/* <DataAPI></DataAPI> */}
-
-    <SearchPage></SearchPage>
+<NavBar />
+    <SearchPage/>
     </div>
   );
 }
