@@ -30,14 +30,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Navbar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{background: "#f7ae9e"}} >
         <Toolbar>
           <IconButton
-             size="large"
-             edge="start"
-             color="inherit"
+            size="large"
+            edge="start"
+            color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            sx={{ color: "red", mr: 2 }}
           >
             <MenuIcon />
           </IconButton>
@@ -49,7 +49,7 @@ const Navbar = () => {
           >
             SDA Dogs
           </Typography>
-          
+
 
         </Toolbar>
       </AppBar>
