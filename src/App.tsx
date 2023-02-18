@@ -6,8 +6,9 @@ import SearchPage from './components/SearchPage/SearchPage';
 function App() {
   return (
     <div className="App">
-      {/* <DataAPI></DataAPI> */}
-<NavBar />
+      <NavBar />
+       <DataAPI></DataAPI> 
+
     <SearchPage/>
     </div>
   );

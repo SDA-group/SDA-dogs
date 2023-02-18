@@ -36,7 +36,7 @@ const SearchPage = () => {
         <SearchForm setKeyword={setKeyword} />
         <List sx={{ width: "100%", alignContent: "center"}}>
             
-            {posts.map((el, i) => {
+            {posts && posts.map((el, i) => {
                 return <Posts post={el} key={i} />
             })}
         </List>
