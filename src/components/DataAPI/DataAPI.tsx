@@ -6,7 +6,8 @@ import Posts from '../Posts/Posts'
 
  export interface PostsObj {
     name: string;
-    url: string;
+    image: File;
+   url: string;
 }
 const DataAPI = () => {
 const [posts, setPosts] = useState<PostsObj [] | []>([])
@@ -14,7 +15,7 @@ useEffect(() => {
 
     axios.get(`https://api.thedogapi.com/v1/breeds$&apiKey={API_KEY}`)
     .then((data) => {
-        setPosts(data.data)
+        setPosts(data.data.image)
 
     })
 }, []);
