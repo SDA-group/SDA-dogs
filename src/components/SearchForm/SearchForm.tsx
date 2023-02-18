@@ -3,25 +3,25 @@ import { Button, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 
 interface SearchFormValues {
-    name: string;
+    keyword: string;
 }
 
 interface SearchFormProps {
-    setName: (val: string) => void;
+    setKeyword: (val: string) => void;
 }
 
-const SearchForm = ({ setName }: SearchFormProps) => {
+const SearchForm = ({ setKeyword }: SearchFormProps) => {
     const { register, handleSubmit} = useForm<SearchFormValues>();
-    const updateName = (data: SearchFormValues) => {
-        setName(data.name);
+    const updateKeyword = (data: SearchFormValues) => {
+        setKeyword(data.keyword);
     }
     return (
-        <form onSubmit={handleSubmit (updateName)}
+        <form onSubmit={handleSubmit (updateKeyword)}
         style={{ display: "flex", flexDirection: "column"}}>
             <TextField 
             placeholder="name"
             sx={{ my: ".5rem", display: "block", mx: "auto"}}
-            {...register("name", { required: true})}
+            {...register("keyword", { required: true})}
             />
             <Button
             variant="contained"
